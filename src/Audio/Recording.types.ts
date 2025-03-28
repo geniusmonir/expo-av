@@ -1,8 +1,8 @@
+import { AudioSourceAndroid } from '../Audio.types';
 import { Recording } from './Recording';
 import {
   AndroidAudioEncoder,
   AndroidOutputFormat,
-  AudioSourceAndroid,
   IOSAudioQuality,
   IOSOutputFormat,
 } from './RecordingConstants';
