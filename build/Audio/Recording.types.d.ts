@@ -1,5 +1,6 @@
+import { AudioSourceAndroid } from '../Audio.types';
 import { Recording } from './Recording';
-import { AndroidAudioEncoder, AndroidOutputFormat, AudioSourceAndroid, IOSAudioQuality, IOSOutputFormat } from './RecordingConstants';
+import { AndroidAudioEncoder, AndroidOutputFormat, IOSAudioQuality, IOSOutputFormat } from './RecordingConstants';
 export type RecordingStatus = {
     /**
      * A boolean describing if the `Recording` can initiate the recording.

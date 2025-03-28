@@ -62,4 +62,17 @@ export declare enum InterruptionModeAndroid {
      */
     DuckOthers = 2
 }
+export declare enum AudioSourceAndroid {
+    DEFAULT = 0,
+    MIC = 1,
+    VOICE_UPLINK = 2,
+    VOICE_DOWNLINK = 3,
+    VOICE_CALL = 4,
+    CAMCORDER = 5,
+    VOICE_RECOGNITION = 6,
+    VOICE_COMMUNICATION = 7,
+    REMOTE_SUBMIX = 8,
+    UNPROCESSED = 9,
+    VOICE_PERFORMANCE = 10
+}
 //# sourceMappingURL=Audio.types.d.ts.map
