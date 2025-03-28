@@ -40,4 +40,5 @@ export var AudioSourceAndroid;
     AudioSourceAndroid[AudioSourceAndroid["UNPROCESSED"] = 9] = "UNPROCESSED";
     AudioSourceAndroid[AudioSourceAndroid["VOICE_PERFORMANCE"] = 10] = "VOICE_PERFORMANCE";
 })(AudioSourceAndroid || (AudioSourceAndroid = {}));
+export { getRecordingOptions, getAudioSource, } from './Audio/RecordingConstants';
 //# sourceMappingURL=Audio.types.js.map

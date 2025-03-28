@@ -213,4 +213,10 @@ export const getRecordingOptions = (quality, audioSource = AudioSourceAndroid.DE
         },
     };
 };
+export const getAudioSource = (input) => {
+    const key = input.toUpperCase().replace(/\s+/g, '_');
+    return key in AudioSourceAndroid
+        ? AudioSourceAndroid[key]
+        : AudioSourceAndroid.DEFAULT;
+};
 //# sourceMappingURL=RecordingConstants.js.map

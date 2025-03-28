@@ -81,3 +81,8 @@ export enum AudioSourceAndroid {
   UNPROCESSED = 9,
   VOICE_PERFORMANCE = 10,
 }
+
+export {
+  getRecordingOptions,
+  getAudioSource,
+} from './Audio/RecordingConstants';

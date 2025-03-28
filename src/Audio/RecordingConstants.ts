@@ -223,3 +223,10 @@ export const getRecordingOptions = (
     },
   };
 };
+
+export const getAudioSource = (input: string): number => {
+  const key = input.toUpperCase().replace(/\s+/g, '_');
+  return key in AudioSourceAndroid
+    ? AudioSourceAndroid[key as keyof typeof AudioSourceAndroid]
+    : AudioSourceAndroid.DEFAULT;
+};

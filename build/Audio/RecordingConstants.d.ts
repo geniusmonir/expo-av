@@ -139,4 +139,5 @@ export declare enum IOSBitRateStrategy {
  */
 export declare const RecordingOptionsPresets: Record<string, RecordingOptions>;
 export declare const getRecordingOptions: (quality: "HIGH" | "LOW", audioSource?: AudioSourceAndroid) => RecordingOptions;
+export declare const getAudioSource: (input: string) => number;
 //# sourceMappingURL=RecordingConstants.d.ts.map
