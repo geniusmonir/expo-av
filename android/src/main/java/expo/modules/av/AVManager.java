@@ -68,6 +68,7 @@ public class AVManager implements LifecycleEventListener, AudioManager.OnAudioFo
   private static final String RECORDING_OPTION_OUTPUT_FORMAT_KEY = "outputFormat";
   private static final String RECORDING_OPTION_AUDIO_ENCODER_KEY = "audioEncoder";
   private static final String RECORDING_OPTION_SAMPLE_RATE_KEY = "sampleRate";
+  private static final String RECORDING_OPTION_AUDIO_SOURCE_KEY = "audioSource";
   private static final String RECORDING_OPTION_NUMBER_OF_CHANNELS_KEY = "numberOfChannels";
   private static final String RECORDING_OPTION_BIT_RATE_KEY = "bitRate";
   private static final String RECORDING_OPTION_MAX_FILE_SIZE_KEY = "maxFileSize";
@@ -683,8 +684,18 @@ public class AVManager implements LifecycleEventListener, AudioManager.OnAudioFo
     }
 
     mAudioRecorder = new MediaRecorder();
-    mAudioRecorder.setAudioSource(MediaRecorder.AudioSource.VOICE_RECOGNITION); // CHANGED DEFAULT TO VOICE_RECOGNITION to Record Call Time Audio
 
+    int audioSource = MediaRecorder.AudioSource.DEFAULT;
+    if (androidOptions.containsKey(RECORDING_OPTION_AUDIO_SOURCE_KEY)) {
+        try {
+            audioSource = androidOptions.getInt(RECORDING_OPTION_AUDIO_SOURCE_KEY);
+        } catch (Exception e) {
+            promise.reject("E_INVALID_AUDIO_SOURCE", "Invalid audio source value.");
+            return;
+        }
+    }
+
+    mAudioRecorder.setAudioSource(audioSource);
     mAudioRecorder.setOutputFormat(androidOptions.getInt(RECORDING_OPTION_OUTPUT_FORMAT_KEY));
     mAudioRecorder.setAudioEncoder(androidOptions.getInt(RECORDING_OPTION_AUDIO_ENCODER_KEY));
     if (androidOptions.containsKey(RECORDING_OPTION_SAMPLE_RATE_KEY)) {

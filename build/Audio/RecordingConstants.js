@@ -1,3 +1,18 @@
+// Enum for Android audio sources
+export var AudioSourceAndroid;
+(function (AudioSourceAndroid) {
+    AudioSourceAndroid[AudioSourceAndroid["DEFAULT"] = 0] = "DEFAULT";
+    AudioSourceAndroid[AudioSourceAndroid["MIC"] = 1] = "MIC";
+    AudioSourceAndroid[AudioSourceAndroid["VOICE_UPLINK"] = 2] = "VOICE_UPLINK";
+    AudioSourceAndroid[AudioSourceAndroid["VOICE_DOWNLINK"] = 3] = "VOICE_DOWNLINK";
+    AudioSourceAndroid[AudioSourceAndroid["VOICE_CALL"] = 4] = "VOICE_CALL";
+    AudioSourceAndroid[AudioSourceAndroid["CAMCORDER"] = 5] = "CAMCORDER";
+    AudioSourceAndroid[AudioSourceAndroid["VOICE_RECOGNITION"] = 6] = "VOICE_RECOGNITION";
+    AudioSourceAndroid[AudioSourceAndroid["VOICE_COMMUNICATION"] = 7] = "VOICE_COMMUNICATION";
+    AudioSourceAndroid[AudioSourceAndroid["REMOTE_SUBMIX"] = 8] = "REMOTE_SUBMIX";
+    AudioSourceAndroid[AudioSourceAndroid["UNPROCESSED"] = 9] = "UNPROCESSED";
+    AudioSourceAndroid[AudioSourceAndroid["VOICE_PERFORMANCE"] = 10] = "VOICE_PERFORMANCE";
+})(AudioSourceAndroid || (AudioSourceAndroid = {}));
 // @docsMissing
 export var AndroidOutputFormat;
 (function (AndroidOutputFormat) {
@@ -201,5 +216,15 @@ const LOW_QUALITY = {
 export const RecordingOptionsPresets = {
     HIGH_QUALITY,
     LOW_QUALITY,
+};
+export const getRecordingOptions = (quality, audioSource = AudioSourceAndroid.DEFAULT) => {
+    const baseOptions = quality === 'HIGH' ? HIGH_QUALITY : LOW_QUALITY;
+    return {
+        ...baseOptions,
+        android: {
+            ...baseOptions.android,
+            audioSource,
+        },
+    };
 };
 //# sourceMappingURL=RecordingConstants.js.map

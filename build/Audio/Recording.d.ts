@@ -21,7 +21,7 @@ export declare function requestPermissionsAsync(): Promise<PermissionResponse>;
  * const [permissionResponse, requestPermission] = Audio.usePermissions();
  * ```
  */
-export declare const usePermissions: (options?: PermissionHookOptions<object> | undefined) => [PermissionResponse | null, () => Promise<PermissionResponse>, () => Promise<PermissionResponse>];
+export declare const usePermissions: any;
 /**
  * > **warning** **Warning**: Experimental for web.
  *

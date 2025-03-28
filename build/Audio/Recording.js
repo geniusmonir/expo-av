@@ -1,4 +1,4 @@
-import { PermissionStatus, createPermissionHook, EventEmitter, Platform, } from 'expo-modules-core';
+import { PermissionResponse, PermissionStatus, PermissionHookOptions, createPermissionHook, EventEmitter, Platform, } from 'expo-modules-core';
 import { isAudioEnabled, throwIfAudioIsDisabled } from './AudioAvailability';
 import { RecordingOptionsPresets } from './RecordingConstants';
 import { Sound } from './Sound';
@@ -392,7 +392,7 @@ export class Recording {
         { uri: this._uri }, initialStatus, onPlaybackStatusUpdate, false);
     }
 }
-export { PermissionStatus };
+export { PermissionResponse, PermissionStatus, PermissionHookOptions };
 export * from './RecordingConstants';
 export * from './Recording.types';
 //# sourceMappingURL=Recording.js.map

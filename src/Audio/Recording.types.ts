@@ -2,6 +2,7 @@ import { Recording } from './Recording';
 import {
   AndroidAudioEncoder,
   AndroidOutputFormat,
+  AudioSourceAndroid,
   IOSAudioQuality,
   IOSOutputFormat,
 } from './RecordingConstants';
@@ -60,6 +61,14 @@ export type RecordingOptionsAndroid = {
    * The desired audio encoder. See the [`AndroidAudioEncoder`](#androidaudioencoder) enum for all valid values.
    */
   audioEncoder: AndroidAudioEncoder | number;
+
+  /**
+   * The desired audio source. See the [`AndroidAudioSource`](#androidaudiosource) enum for valid values.
+   *
+   * @example AudioSourceAndroid.MIC (1), AudioSourceAndroid.VOICE_RECOGNITION (6)
+   */
+  audioSource?: AudioSourceAndroid | number;
+
   /**
    * The desired sample rate.
    *
